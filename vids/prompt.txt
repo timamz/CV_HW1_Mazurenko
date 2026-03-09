@@ -1,0 +1,9 @@
+Create a realistic handheld video of a static urban scene designed specifically for classical camera stabilization. The camera faces a rigid building facade across a quiet street: brick walls, windows, door frames, fence lines, sidewalk edges, curb, parked car, utility pole, and other straight architectural features. The camera operator is standing mostly in one spot and trying to hold the shot still, but natural hand tremor causes small visible jitter, slight rotation, and mild horizontal/vertical shake. The shake should be noticeable but not violent.
+
+Use a single continuous shot with no cuts, no zoom, no autofocus pulsing, no exposure changes, no rolling-shutter wobble, no heavy motion blur, and no fast camera movement. Keep the environment almost completely static: no pedestrians crossing close to the camera, no moving cars, no waving trees filling the frame, no foreground objects passing by. Keep most of the frame occupied by rigid high-contrast structures with clear corners, lines, and repeated geometric patterns. Lighting should stay stable and natural.
+
+The result should look like an ordinary handheld recording of a still scene, with enough small shake to make stabilization visibly useful, while remaining ideal for feature tracking and a simple global-motion stabilization model.
+
+
+
+
