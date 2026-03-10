@@ -6,7 +6,7 @@
 4. estimates global frame-to-frame camera motion with a partial affine transform;
 5. smooths the camera trajectory with a moving average;
 6. warps frames to the smoothed trajectory;
-7. saves the stabilized video and required visualizations.
+7. saves the results
 
 ## Files
 
@@ -37,14 +37,9 @@ python3 src/stabilize.py --input vids/sora.mp4 --smooth-radius 60 --crop-ratio 0
 ### `youtube_first_20s.mp4`
 
 - The video contains real camera translation forward, not only hand jitter. Because of that, some residual drift and perspective change remain even after smoothing. The output is steadier, but it is not locked to a perfectly fixed viewpoint.
-- The strongest visual distortions happen when large foreground objects enter or leave the frame. In these moments the estimated global motion is influenced by objects with strong apparent motion, and the stabilized frame can still wobble slightly.
 - The stronger center crop removes most border artifacts, but it also cuts away part of the field of view. This is a tradeoff made to avoid black edges after warping.
 
 ### `green.mp4`
-
-Chosen video: `vids/green.mp4`, 13.5 seconds, 1280x720.
-
-Observed result on this video:
 
 - This video is a difficult case for stabilization because almost the entire frame is filled with dense green foliage. The method assumes that one global camera motion can explain most of the frame, but here there is no clear rigid background with stable structures such as buildings, horizon lines, or straight edges.
 - The result is only a modest improvement. Small high-frequency shake is reduced, but the stabilized video in `outputs_green/comparison.mp4` still has visible residual wobble.
@@ -53,10 +48,6 @@ Observed result on this video:
 - The larger crop hides most border artifacts after warping, but it noticeably reduces the field of view. This is the tradeoff used to keep the final stabilized frame visually cleaner.
 
 ### `sora.mp4`
-
-Chosen video: `vids/sora.mp4`, 8.0 seconds, 1280x720.
-
-Observed result on this video:
 
 - This is the best case for the current method. The scene is almost static and dominated by rigid structures: brick walls, window frames, sidewalk edges, and a utility pole. These features give stable points for Lucas-Kanade tracking.
 - The stabilization works noticeably better here
