@@ -21,7 +21,7 @@ def smooth_trajectory(trajectory, radius):
     for i in range(trajectory.shape[1]):
         smoothed[:, i] = moving_average(trajectory[:, i], radius)
     return smoothed
-
+            
 
 def ensure_dir(path):
     Path(path).mkdir(parents=True, exist_ok=True)

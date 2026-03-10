@@ -1,4 +1,4 @@
-# Variant A: Minimal Camera Stabilization
+# Variant A: Camera Stabilization
 
 1. reads a shaky video;
 2. detects sparse feature points;
